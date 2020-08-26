@@ -17,6 +17,7 @@
             <h1>Latest Weather <br> at Elysium Planitia</h1>
 
         </div>
+        <br>
         <div class="row">
             <p>InSight is taking daily weather measurements
                 (temperature, wind, pressure) <br> on the surface
@@ -32,67 +33,80 @@
             </div>
             <div class="col-3">
                 <br><br>
-                <h4>Sol 611</h4>
-                <p>August 15</p>
+                <h4 id="currentSol">Sol 611</h4>
+                <p id="currentDate">August 15</p>
 
             </div>
             <div class="col-3">
                 <br><br>
-                <p>Pressure:</p>
-                <p>Wind Speed:</p>
-                <p>Wind Direction:</p>
-                <p>Atmospheric Opacity:</p>
+                <p>Pressure: <span id="pressure"></span></p>
+                <p>Wind Speed: <span id="windSpeed"></span></p>
+                <p>Wind Direction: <span id="windDirection"></span></p>
+                <p>Atmospheric Opacity: <span id="atmosOpa"></span></p>
 
             </div>
 
         </div>
         <br><br>
        
-<div class="row cards">
-    <div class="card col">
+<div class="row fourDay">
+    <div class="col-1"></div>
+    <div>
+    <button class="card col" id="btnSol1">
         <div class="card-body">
-            <h4>Sol 608</h4>
-            <div>Aug. 12</div>
+            <h4 id="sol1">Sol 608</h4>
+            <div id="date1">Aug. 12</div>
             <div>------------</div>
-            <div>Avg temp:</div>
-            <div>Min. Temp:</div>
-            <div>Max. Temp</div>
+            <div>Avg temp: <span id="avgTempSol1"></span></div>
+            <div>Min. Temp: <span id="minTempSol1"></span></div>
+            <div>Max. Temp: <span id="maxTempSol1"></span></div>
 
         </div>
+    </button>
     </div>
-    <div class="card col">
+    <div class="col-1"></div>
+    <div>
+    <button class="card col" id="btnSol2">
         <div class="card-body">
-            <h4>Sol 609</h4>
-            <div>Aug. 13</div>
+            <h4 id="sol2">Sol 609</h4>
+            <div id="date2">Aug. 13</div>
             <div>------------</div>
-            <div>Avg temp:</div>
-            <div>Min. Temp:</div>
-            <div>Max. Temp</div>
+            <div>Avg temp: <span id="avgTempSol2"></span></div>
+            <div>Min. Temp: <span id="minTempSol2"></span></div>
+            <div>Max. Temp: <span id="maxTempSol2"></span></div>
 
         </div>
+    </button>
     </div>
-    <div class="card col">
+    <div class="col-1"></div>
+    <div>
+    <button class="card col" id="btnSol3">
         <div class="card-body">
-            <h4>Sol 610</h4>
-            <div>Aug. 14</div>
+            <h4 id="sol3">Sol 610</h4>
+            <div id="date3">Aug. 14</div>
             <div>------------</div>
-            <div>Avg temp:</div>
-            <div>Min. Temp:</div>
-            <div>Max. Temp</div>
+            <div>Avg temp: <span id="avgTempSol3"></span></div>
+            <div>Min. Temp: <span id="minTempSol3"></span></div>
+            <div>Max. Temp: <span id="maxTempSol3"></span></div>
 
         </div>
+    </button>
     </div>
-    <div class="card col">
+    <div class="col-1"></div>
+    <div>
+    <button class="card col" id="btnSol4">
         <div class="card-body">
-            <h4>Sol 611</h4>
-            <div>Aug. 15</div>
+            <h4 id="sol4">Sol 611</h4>
+            <div id="date4">Aug. 15</div>
             <div>------------</div>
-            <div>Avg temp:</div>
-            <div>Min. Temp:</div>
-            <div>Max. Temp</div>
+            <div>Avg temp: <span id="avgTempSol4"></span></div>
+            <div>Min. Temp: <span id="minTempSol4"></span></div>
+            <div>Max. Temp: <span id="maxTempSol4"></span></div>
 
         </div>
+    </button>
     </div>
+
 
 </div>
     
