@@ -4,8 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css" integrity="sha384-9+PGKSqjRdkeAU7Eu4nkJU8RFaH8ace8HGXnkiKMP9I9Te0GJ4/km3L1Z8tXigpG" crossorigin="anonymous">
+  <style src="style.css"></style>
 </head>
 <body>
-    
+    <form>
+        <fieldset class="form-group">
+            <legend>Rover Select</legend>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" value="" checked="">
+                Curiosity
+              </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" value="" checked="">
+                  Opportunity
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" value="" checked="">
+                  Spirit
+                </label>
+              </div>
+          </fieldset>
+        <fieldset>
+          <div class="form-group">
+            <label for="exampleSelect1">Camera Select</label>
+            <select class="form-control" id="exampleSelect1">
+              <option>FHAZ</option>
+              <option>RHAZ</option>
+              <option>MAST</option>
+              <option>CHEMCAM</option>
+              <option>MAHLI</option>
+              <option>MARDI</option>
+              <option>NAVCAM</option>
+              <option>PANCAM</option>
+              <option>MINITES</option>
+            </select>
+          </div>
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </fieldset>
+      </form>
 </body>
+<script src="script.js">
+     
+</script>
 </html>
