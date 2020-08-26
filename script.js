@@ -1,22 +1,31 @@
-//Adding in code to test- Shubhangi M
 
-//Josh Back End Code 
-
-
-
-
-
-
-
-
-
-// Shubhangi Back End Code 
-$( document ).ready(function() {
-    console.log( "Getting Weather for Mars!" );
-    getForecast();
- });
+$(document).ready(function() {
+ 
+  var queryDate = moment().subtract(1, 'days');
+ 
+  var queryYear = moment(queryDate).format("YYYY");
+  var queryMonth = moment(queryDate).format("MM");
+  var queryDay = moment(queryDate).format("D");
+  var rover = "curiosity";
+  var camera = "fhaz";
   
- let marsWeather = [];
+  var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
+
+  var querySelector = "https://api.nasa.gov/mars-photos/api/v1/rovers/" + rover + "/photos?earth_date=" + queryYear + "-" + queryMonth + "-" + queryDay + "&camera=" + camera + "&api_key=" + key;
+  
+  $.ajax({
+    url: querySelector,
+    method: "GET"
+  }).then (function(response) {
+    console.log(response);
+  });
+
+  console.log( "Getting Weather for Mars!" );
+  getForecast();
+
+});
+
+let marsWeather = [];
   
  function getForecast() {
     //Link to the Nasa API
@@ -27,14 +36,10 @@ $( document ).ready(function() {
       url: NasaQueryURL,
       method: "GET"
     }).then(function(response) {
-  
       console.log(response);
-     
-  
-  
     })
     .catch((error) => {
         console.log(error)
     });
  }
- 
+
