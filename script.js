@@ -25,7 +25,7 @@ $(document).ready(function() {
 
 });
 
-let marsWeather = [];
+let marsWeather = [];//adding changes 
   
  function getForecast() {
     //Link to the Nasa API
