@@ -1,7 +1,7 @@
 $(document).ready(function() {
  
-  var inputRover;
-  var inputCamera;
+  // var inputRover;
+  // var inputCamera;
 
 
   var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
@@ -29,27 +29,27 @@ $(document).ready(function() {
       };
 
       // if statements to determine the correct maxDate for user camera
-      if (rover = curiosity) {
-        rover.maxDate = response.photo_manifest.max_date;
-      }
-      else if (rover = opportinity || camera = navcam) {
-        rover.maxDate = "2018-05-16";
-      }
-      else if (rover = opportunity || camera = fhaz) {
-        rover.maxDate = "2018-06-04";
-      }
-      else if (rover = opportunity || camera = rhaz) {
-        rover.maxDate = "2018-05-17";
-      }
-      else if (rover = spirit || camera = navcam) {
-        rover.maxDate = "2010-02-26";
-      }
-      else if (rover = spirit || camera = fhaz) {
-        rover.maxDate = "2010-02-14";
-      }
-      else {
-        rover.maxDate = "2010-02-09"
-      }
+      // if (rover = curiosity) {
+      //   rover.maxDate = response.photo_manifest.max_date;
+      // }
+      // else if (rover = opportinity || camera = navcam) {
+      //   rover.maxDate = "2018-05-16";
+      // }
+      // else if (rover = opportunity || camera = fhaz) {
+      //   rover.maxDate = "2018-06-04";
+      // }
+      // else if (rover = opportunity || camera = rhaz) {
+      //   rover.maxDate = "2018-05-17";
+      // }
+      // else if (rover = spirit || camera = navcam) {
+      //   rover.maxDate = "2010-02-26";
+      // }
+      // else if (rover = spirit || camera = fhaz) {
+      //   rover.maxDate = "2010-02-14";
+      // }
+      // else {
+      //   rover.maxDate = "2010-02-09"
+      // }
 
       rover.camera = camera;
       rover.name = name;
@@ -74,12 +74,4 @@ $(document).ready(function() {
 
       });
     }
-
- 
-
-  
-
-
-
-
 });
