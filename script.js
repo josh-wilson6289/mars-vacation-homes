@@ -89,14 +89,71 @@ $(document).ready(function() {
 
       });
     }
+    console.log( "Getting Weather for Mars!" );
+    getForecast();
 });
 
-  console.log( "Getting Weather for Mars!" );
-  getForecast();
-
-});
 
 let marsWeather = [];
+var exampleWeather = {
+  "sol_keys": [ "259", "260", "261", "262", "263", "264", "265"], 
+  "validity_checks": {
+    "259": {
+      "AT": {
+        "sol_hours_with_data": [
+          0, 
+          1, 
+          2, 
+          3, 
+          4, 
+          5, 
+          6
+        ], 
+        "valid": false
+      }, 
+      "HWS": {
+        "sol_hours_with_data": [
+          0, 
+          1, 
+          2, 
+          3, 
+          4, 
+          5, 
+          6
+        ], 
+        "valid": false
+      }, 
+      "PRE": {
+        "sol_hours_with_data": [
+          0, 
+          1, 
+          2, 
+          3, 
+          4, 
+          5, 
+          6
+        ], 
+        "valid": false
+      }, 
+      "WD": {
+        "sol_hours_with_data": [
+          0, 
+          1, 
+          2, 
+          3, 
+          4, 
+          5, 
+          6
+        ], 
+        "valid": false
+      }
+    }, 
+    "sol_hours_required": 18, 
+    "sols_checked": [
+      "612"
+    ]
+  }
+} 
   
  function getForecast() {
     //Link to the Nasa API
@@ -108,6 +165,8 @@ let marsWeather = [];
       method: "GET"
     }).then(function(response) {
       console.log(response);
+      console.log(exampleWeather);
+      console.log("Hey")
     })
     .catch((error) => {
         console.log(error)
