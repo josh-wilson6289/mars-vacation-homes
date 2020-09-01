@@ -15,7 +15,7 @@ var clearBtn = document.querySelector("#clearBtn");
 //Validation (must choose only 1 camera, must choose only 1 camera)
 
 // array to store user-checked rovers
-var rovers = [];
+var roversArr = [];
 
 var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
 
@@ -32,72 +32,64 @@ var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
       "name": "Curiosity",
       "camera": "", 
       "maxDate": ""};
-      rovers.push(curiosityRover);
+      roversArr.push(curiosityRover);
     }
     if (opportunity.checked == true) {
       var opportunityRover = {
         "name": "Opportunity",
         "camera": "", 
         "maxDate": ""};
-      rovers.push(opportunityRover);
+      roversArr.push(opportunityRover);
     }
     if (spirit.checked == true) {
       var spiritRover = {
         "name": "Spirit",
         "camera": "", 
         "maxDate": ""};
-      rovers.push(spiritRover);
+      roversArr.push(spiritRover);
     }
-    getLastDate(rover);
+    // need to figure out how to assign camera here
+    getLastDate(roversArr);
     }
   
-  function getLastDate(rover) {
-  
+  function getLastDate(roversArr) {
     var querySelector = "https://api.nasa.gov/mars-photos/api/v1/manifests/" + name + "?" + "&api_key=" + key;
 
-      $.ajax({
-        url: querySelector,
-        method: "GET"
-      }).then (function(response) {
-      
-      // creates generic rover object to store user values into
-      rover = {
-        "name": "",
-        "camera": "",
-        "maxDate": "" 
-      };
 
-
-      // if statements to determine the correct maxDate for user camera
-      // if (rover = curiosity) {
-      //   rover.maxDate = response.photo_manifest.max_date;
-      // }
-      // else if (rover = opportinity || camera = navcam) {
-      //   rover.maxDate = "2018-05-16";
-      // }
-      // else if (rover = opportunity || camera = fhaz) {
-      //   rover.maxDate = "2018-06-04";
-      // }
-      // else if (rover = opportunity || camera = rhaz) {
-      //   rover.maxDate = "2018-05-17";
-      // }
-      // else if (rover = spirit || camera = navcam) {
-      //   rover.maxDate = "2010-02-26";
-      // }
-      // else if (rover = spirit || camera = fhaz) {
-      //   rover.maxDate = "2010-02-14";
-      // }
-      // else {
-      //   rover.maxDate = "2010-02-09"
+      //   for (var i = 0; i < roversArr.length; i++) {
+      //   //   // if statements to determine the correct maxDate for user camera
+      //     if (rover.name = curiosity) {
+      //       $.ajax({
+      //       url: querySelector,
+      //       method: "GET"
+      //      }).then (function(response) {
+      //        rover.maxDate = response.photo_manifest.max_date;
+      //      });   
+      //     }
+      //     else if (rover.name = opportinity || rover.camera = navcam) {
+      //       rover.maxDate = "2018-05-16";
+      //     }
+      //     else if (rover.name = opportunity || rover.camera = fhaz) {
+      //       rover.maxDate = "2018-06-04";
+      //     }
+      //     else if (rover.name = opportunity || rover.camera = rhaz) {
+      //       rover.maxDate = "2018-05-17";
+      //     }
+      //     else if (rover.name = spirit || rover.camera = navcam) {
+      //       rover.maxDate = "2010-02-26";
+      //     }
+      //     else if (rover.name = spirit || rover.camera = fhaz) {
+      //       rover.maxDate = "2010-02-14";
+      //     }
+      //     else {
+      //       rover.maxDate = "2010-02-09"
+      //     }
+      //   }
       // }
 
-      rover.camera = camera;
-      rover.name = name;
-
-      // pass rover object to displayPicture function
-      displayPicture(rover);
-    });   
-  }
+      // // pass rover array to displayPicture function
+      // displayPicture(roversArr);
+   
 
 
 
