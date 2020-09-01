@@ -67,15 +67,16 @@ var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
         url: "https://api.nasa.gov/mars-photos/api/v1/manifests/curiosity?&api_key=" + key,
         method: "GET"
         }).then (function(response) {
-          console.log(response.photo_manifest.max_date);
-          roversArr[i].maxDate = response.photo_manifest.max_date;
-          
+        
+          // gets the index for curiosity, since the ajax call takes longer to return a value and i would be undefined
+          var index = roversArr.findIndex(function(x){return x.name === "curiosity"});
+          roversArr[index].maxDate = response.photo_manifest.max_date;
         });
       }   
     }
       console.log(roversArr);
       // pass rover array to displayPicture function
-      // displayPicture(roversArr);
+      displayPicture(roversArr);
   }  
 
 
