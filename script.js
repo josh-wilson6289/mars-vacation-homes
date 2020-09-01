@@ -14,21 +14,19 @@ var submitBtn = document.querySelector("#submitBtn");
 var clearBtn = document.querySelector("#clearBtn");
 //Validation (must choose only 1 camera, must choose only 1 camera)
 
+// array to store user-checked rovers
 var rovers = [];
 
-
- 
-  // var inputRover;
-  // var inputCamera;
-
-
-  var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
+var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
 
   function getInput() {
       // get rover id and assign it to name.  pass it to getLastDate
       // camera equals user input for #cameraSelect.  Pass camera to getLastDate
       //getLastDate(rover, camera);
 
+    if (curiosity.checked == false && opportunity.checked == false && spirit.checked == false) {
+      alert("Please choose a rover!");
+    }
     if (curiosity.checked == true) {
       var curiosityRover = {
       "name": "Curiosity",
@@ -50,13 +48,10 @@ var rovers = [];
         "maxDate": ""};
       rovers.push(spiritRover);
     }
-    if (curiosity.checked == false && opportunity.checked == false && spirit.checked == false) {
-      alert("Please choose a rover!");
-    }
-    console.log(rovers);
+    getLastDate(rover);
     }
   
-  function getLastDate(name, camera) {
+  function getLastDate(rover) {
   
     var querySelector = "https://api.nasa.gov/mars-photos/api/v1/manifests/" + name + "?" + "&api_key=" + key;
 
