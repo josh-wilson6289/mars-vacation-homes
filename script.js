@@ -1,18 +1,22 @@
+$(document).ready(function() {
+
 //Rover Select 
-var curiosityEl = document.querySelector("#curiosity");
-var opportunityEl =  document.querySelector("#opportunity");
-var spiritEl = document.querySelector("#spirit");
+var curiosity = document.querySelector("#curiosity");
+var opportunity =  document.querySelector("#opportunity");
+var spirit = document.querySelector("#spirit");
 //Camera Select 
 var cameraSelectEl = document.querySelector("#cameraSelect");
-var fhazSelect = document.querySelector("#fhaz");
-var rhazSelect = document.querySelector("#rhaz");
-var navcamSelect = document.querySelector("#navcam");
+var fhaz = document.querySelector("#fhaz");
+var rhaz = document.querySelector("#rhaz");
+var navcam = document.querySelector("#navcam");
 //Button Select 
-var submitBtnEl = document.querySelector("#submitBtn");
-var clearBtnEl = document.querySelector("#clearBtn");
+var submitBtn = document.querySelector("#submitBtn");
+var clearBtn = document.querySelector("#clearBtn");
 //Validation (must choose only 1 camera, must choose only 1 camera)
 
-$(document).ready(function() {
+var rovers = [];
+
+
  
   // var inputRover;
   // var inputCamera;
@@ -20,10 +24,36 @@ $(document).ready(function() {
 
   var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
 
-  function getInput(inputRover, inputCamera) {
+  function getInput() {
       // get rover id and assign it to name.  pass it to getLastDate
       // camera equals user input for #cameraSelect.  Pass camera to getLastDate
       //getLastDate(rover, camera);
+
+    if (curiosity.checked == true) {
+      var curiosityRover = {
+      "name": "Curiosity",
+      "camera": "", 
+      "maxDate": ""};
+      rovers.push(curiosityRover);
+    }
+    if (opportunity.checked == true) {
+      var opportunityRover = {
+        "name": "Opportunity",
+        "camera": "", 
+        "maxDate": ""};
+      rovers.push(opportunityRover);
+    }
+    if (spirit.checked == true) {
+      var spiritRover = {
+        "name": "Spirit",
+        "camera": "", 
+        "maxDate": ""};
+      rovers.push(spiritRover);
+    }
+    if (curiosity.checked == false && opportunity.checked == false && spirit.checked == false) {
+      alert("Please choose a rover!");
+    }
+    console.log(rovers);
     }
   
   function getLastDate(name, camera) {
@@ -89,12 +119,19 @@ $(document).ready(function() {
 
       });
     }
-});
+
+    // submit button runs getInput function
+    $("#submitBtn").click(function() {
+      event.preventDefault();
+      getInput();
+    });
+
+
 
   console.log( "Getting Weather for Mars!" );
   getForecast();
 
-});
+
 
 let marsWeather = [];
   
@@ -114,4 +151,4 @@ let marsWeather = [];
     });
  }
 
-
+});
