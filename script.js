@@ -259,33 +259,33 @@ var exampleWeather = {
       var t = parseInt(r);
       $("#sol1").text("Sol: " + t);
       $("#date1").text(marsWeather[t].First_UTC.Time.split('T').shift());
-      $("#avgTempSol1").text(Math.round(marsWeather[t].AT.av));
-      $("#minTempSol1").text(Math.round(marsWeather[t].AT.mn));
-      $("#maxTempSol1").text(Math.round(marsWeather[t].AT.mx));
+      $("#avgTempSol1").text(Math.round(marsWeather[t].AT.av) + "˚" + " C");
+      $("#minTempSol1").text(Math.round(marsWeather[t].AT.mn) + "˚" + " C");
+      $("#maxTempSol1").text(Math.round(marsWeather[t].AT.mx) + "˚" + " C");
        t = t + 1;
 
       //setting up sol two
       $("#sol2").text("Sol: " + t);
       $("#date2").text(marsWeather[t].First_UTC.Time.split('T').shift());
-      $("#avgTempSol2").text(Math.round(marsWeather[t].AT.av));
-      $("#minTempSol2").text(Math.round(marsWeather[t].AT.mn));
-      $("#maxTempSol2").text(Math.round(marsWeather[t].AT.mx));
+      $("#avgTempSol2").text(Math.round(marsWeather[t].AT.av) + "˚" + " C");
+      $("#minTempSol2").text(Math.round(marsWeather[t].AT.mn) + "˚" + " C");
+      $("#maxTempSol2").text(Math.round(marsWeather[t].AT.mx) + "˚" + " C");
        t = t + 1;
 
       //setting up sol three
       $("#sol3").text("Sol: " + t);
       $("#date3").text(marsWeather[t].First_UTC.Time.split('T').shift());
-      $("#avgTempSol3").text(Math.round(marsWeather[t].AT.av));
-      $("#minTempSol3").text(Math.round(marsWeather[t].AT.mn));
-      $("#maxTempSol3").text(Math.round(marsWeather[t].AT.mx));
+      $("#avgTempSol3").text(Math.round(marsWeather[t].AT.av) + "˚" + " C");
+      $("#minTempSol3").text(Math.round(marsWeather[t].AT.mn) + "˚" + " C");
+      $("#maxTempSol3").text(Math.round(marsWeather[t].AT.mx) + "˚" + " C");
        t = t + 1;
 
       //setting up sol four
       $("#sol4").text("Sol: " + t);
       $("#date4").text(marsWeather[t].First_UTC.Time.split('T').shift());
-      $("#avgTempSol4").text(Math.round(marsWeather[t].AT.av));
-      $("#minTempSol4").text(Math.round(marsWeather[t].AT.mn));
-      $("#maxTempSol4").text(Math.round(marsWeather[t].AT.mx));
+      $("#avgTempSol4").text(Math.round(marsWeather[t].AT.av) + "˚" + " C");
+      $("#minTempSol4").text(Math.round(marsWeather[t].AT.mn) + "˚" + " C");
+      $("#maxTempSol4").text(Math.round(marsWeather[t].AT.mx) + "˚" + " C");
 
       //setting up the main current info 
        $("#currentSol").text("Sol: " + t);
