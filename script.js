@@ -98,7 +98,7 @@ let marsWeather = [];
 var exampleWeather = {
   "sol_keys": [ "607", "608", "609", "610", "611", "612", "613"], 
   "607":  { 
-    "AT": { "av": -15.233, "ct": 326642, "mn": -93.024, "mx": -18.233 }, 
+    "AT": { "av": -55.233, "ct": 326642, "mn": -93.024, "mx": -18.233 }, 
     "HWS": { "av": 4.35, "ct": 154146, "mn": 0.156, "mx": 17.617 }, 
     "PRE": { "av": 761.006, "ct": 163012, "mn": 742.1498, "mx": 780.3891 }, 
     "WD": {  
@@ -114,7 +114,7 @@ var exampleWeather = {
     "First_UTC": {"Time": "2019-08-26T08:03:59Z", "Last_UTC": "2019-08-27T08:43:34Z", "Season": 'Summer' } 
   }, 
   "608":  { 
-    "AT": { "av": -19.584, "ct": 326642, "mn": -92.004, "mx": -19.584 }, 
+    "AT": { "av": -56.584, "ct": 326642, "mn": -92.004, "mx": -19.584 }, 
     "HWS": { "av": 4.80, "ct": 154146, "mn": 0.156, "mx": 17.617 }, 
     "PRE": { "av": 761.006, "ct": 163012, "mn": 742.1498, "mx": 780.3891 }, 
     "WD": {  
@@ -130,7 +130,7 @@ var exampleWeather = {
     "First_UTC": {"Time": "2019-08-27T08:03:59Z", "Last_UTC": "2019-08-28T08:43:34Z", "Season": 'Summer' } 
   }, 
   "609":  { 
-    "AT": { "av": -18.658, "ct": 326642, "mn": -93.012, "mx": -18.584 }, 
+    "AT": { "av": -55.658, "ct": 326642, "mn": -93.012, "mx": -18.584 }, 
     "HWS": { "av": 4.35, "ct": 154146, "mn": 0.156, "mx": 17.617 }, 
     "PRE": { "av": 761.006, "ct": 163012, "mn": 742.1498, "mx": 780.3891 }, 
     "WD": {  
@@ -146,7 +146,7 @@ var exampleWeather = {
     "First_UTC": {"Time": "2019-08-28T08:03:59Z", "Last_UTC": "2019-08-29T08:43:34Z", "Season": 'Fall' } 
   }, 
   "610":  { 
-    "AT": { "av": -16.584, "ct": 326642, "mn": -93.836, "mx": -16.584}, 
+    "AT": { "av": -54.584, "ct": 326642, "mn": -93.836, "mx": -16.584}, 
     "HWS": { "av": 4.35, "ct": 154146, "mn": 0.156, "mx": 17.617 }, 
     "PRE": { "av": 761.006, "ct": 163012, "mn": 742.1498, "mx": 780.3891 }, 
     "WD": {  
@@ -162,7 +162,7 @@ var exampleWeather = {
     "First_UTC": {"Time": "2019-08-30T08:03:59Z", "Last_UTC": "2019-08-31T08:43:34Z", "Season": 'Fall' } 
   }, 
   "611":  { 
-    "AT": { "av": -16.224, "ct": 326642, "mn": -93.879, "mx": -16.224}, 
+    "AT": { "av": -55.224, "ct": 326642, "mn": -93.879, "mx": -16.224}, 
     "HWS": { "av": 4.35, "ct": 154146, "mn": 0.156, "mx": 17.617 }, 
     "PRE": { "av": 761.006, "ct": 163012, "mn": 742.1498, "mx": 780.3891 }, 
     "WD": {  
@@ -255,16 +255,23 @@ var exampleWeather = {
 
       var r = marsWeather.sol_keys[0];
       var t = parseInt(r);
-      
-
+      $("#sol1").text("Sol: " + t);
+      $("#date1").text(marsWeather[t].First_UTC.Time.split('T').shift());
+      $("#avgTempSol1").text(Math.round(marsWeather[t].AT.av));
+      $("#minTempSol1").text(Math.round(marsWeather[t].AT.mn));
+      $("#maxTempSol1").text(Math.round(marsWeather[t].AT.mx));
        t = t + 1;
+
+
+
+
 
        $("#currentSol").text("Sol: " + t);
        $("#currentDate").text(marsWeather[t].First_UTC.Time.split('T').shift());
        $("#pressure").text(marsWeather[t].PRE.av  + " Pa");
        $("#windSpeed").text(marsWeather[t].HWS.av  + "m/s");
        $("#windDirection").text(marsWeather[t].WD.most_common.compass_point);
-      console.log(marsWeather[t]);
+
 
 
       
