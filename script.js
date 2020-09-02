@@ -10,7 +10,7 @@ var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
   function getInput() {
     
     // gets value from the selected camera
-    var camera = $("#cameraSelect option:selected").val();
+  var camera = $("#cameraSelect option:selected").val();
 
     // assigns camera and rover name to new object
     if (document.getElementById("curiosity").checked == true) {
@@ -339,5 +339,6 @@ var exampleWeather = {
  }
 
 });
+
 
 
