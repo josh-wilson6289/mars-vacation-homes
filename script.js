@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  var photoDisplay = $(".photoDisplay");
 
 // array to store user-checked rovers
 var roversArr = [];
@@ -8,6 +8,7 @@ var roversArr = [];
 var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
 
   function getInput() {
+    photoDisplay.empty();
 
     var camera = $("#cameraSelect option:selected").val();
 
@@ -95,7 +96,7 @@ var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
       }).then (function(response) {
         //here's where we'll get the latest image from the given rover and camera
         console.log(response.photos[0].img_src)
-        var photoDisplay = $("#photoDisplay");
+        photoDisplay = $("#photoDisplay");
         var photo = $("<img>");
         var roverName = $("<h3>");
         var roverDescription = $("<p>"); 
