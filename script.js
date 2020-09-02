@@ -126,6 +126,7 @@ var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
     $("#clearBtn").click(function(){
       event.preventDefault;
       photoDisplay.empty();
+      $(".form-check-input").prop("checked", false).parent().removeClass("active");
     });
 
 
