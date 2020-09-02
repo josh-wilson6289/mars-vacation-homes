@@ -1,100 +1,129 @@
-//Rover Select 
-var curiosityEl = document.querySelector("#curiosity");
-var opportunityEl =  document.querySelector("#opportunity");
-var spiritEl = document.querySelector("#spirit");
-//Camera Select 
-var cameraSelectEl = document.querySelector("#cameraSelect");
-var fhazSelect = document.querySelector("#fhaz");
-var rhazSelect = document.querySelector("#rhaz");
-var navcamSelect = document.querySelector("#navcam");
-//Button Select 
-var submitBtnEl = document.querySelector("#submitBtn");
-var clearBtnEl = document.querySelector("#clearBtn");
-//Validation (must choose only 1 camera, must choose only 1 camera)
-
 $(document).ready(function() {
- 
-  // var inputRover;
-  // var inputCamera;
+
+// array to store user-checked rovers
+var roversArr = [];
 
 
-  var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
+var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
 
-  function getInput(inputRover, inputCamera) {
+  function getInput() {
       // get rover id and assign it to name.  pass it to getLastDate
       // camera equals user input for #cameraSelect.  Pass camera to getLastDate
       //getLastDate(rover, camera);
+    
+    var camera = $("#cameraSelect option:selected").val();
+
+    if (document.getElementById("curiosity") == false && document.getElementById("opportunity") == false && document.getElementById("spirit") == false) {
+      alert("Please choose a rover!");
     }
-  
-  function getLastDate(name, camera) {
-  
-    var querySelector = "https://api.nasa.gov/mars-photos/api/v1/manifests/" + name + "?" + "&api_key=" + key;
-
-      $.ajax({
-        url: querySelector,
-        method: "GET"
-      }).then (function(response) {
-      
-      // creates generic rover object to store user values into
-      rover = {
-        "name": "",
-        "camera": "",
-        "maxDate": "" 
-      };
-
-
-      // if statements to determine the correct maxDate for user camera
-      // if (rover = curiosity) {
-      //   rover.maxDate = response.photo_manifest.max_date;
-      // }
-      // else if (rover = opportinity || camera = navcam) {
-      //   rover.maxDate = "2018-05-16";
-      // }
-      // else if (rover = opportunity || camera = fhaz) {
-      //   rover.maxDate = "2018-06-04";
-      // }
-      // else if (rover = opportunity || camera = rhaz) {
-      //   rover.maxDate = "2018-05-17";
-      // }
-      // else if (rover = spirit || camera = navcam) {
-      //   rover.maxDate = "2010-02-26";
-      // }
-      // else if (rover = spirit || camera = fhaz) {
-      //   rover.maxDate = "2010-02-14";
-      // }
-      // else {
-      //   rover.maxDate = "2010-02-09"
-      // }
-
-      rover.camera = camera;
-      rover.name = name;
-
-      // pass rover object to displayPicture function
-      displayPicture(rover);
-    });   
+    if (document.getElementById("curiosity").checked == true) {
+      var curiosityRover = {
+      "name": "curiosity",
+      "camera": camera, 
+      "maxDate": ""};
+      roversArr.push(curiosityRover);
+    }
+    if (document.getElementById("opportunity").checked == true) {
+      var opportunityRover = {
+        "name": "opportunity",
+        "camera": camera, 
+        "maxDate": ""};
+      roversArr.push(opportunityRover);
+    }
+    if (document.getElementById("spirit").checked == true) {
+      var spiritRover = {
+        "name": "spirit",
+        "camera": camera, 
+        "maxDate": ""};
+      roversArr.push(spiritRover);
+    }
+    getLastDate(roversArr);
   }
+  
+  function getLastDate(roversArr) { 
+    for (var i = 0; i < roversArr.length; i++) {
+      //   // if statements to determine the correct maxDate for user camera
+       
+      if (roversArr[i].name == "opportunity" && roversArr[i].camera == "navcam") {
+        roversArr[i].maxDate = "2018-05-16";
+        var opportunity = roversArr[i];
+        displayPicture(opportunity);
+      }
+      else if (roversArr[i].name == "opportunity" && roversArr[i].camera =="fhaz") {
+        roversArr[i].maxDate = "2018-06-04";
+        var opportunity = roversArr[i];
+        displayPicture(opportunity);
+      }
+      else if (roversArr[i].name == "opportunity" && roversArr[i].camera == "rhaz") {
+        roversArr[i].maxDate = "2018-05-17";
+        var opportunity = roversArr[i];
+        displayPicture(opportunity);
+      }
+      else if (roversArr[i].name == "spirit" && roversArr[i].camera == "navcam") {
+        roversArr[i].maxDate = "2010-02-26";
+        var spirit = roversArr[i]
+        displayPicture(spirit);
+      }
+      else if (roversArr[i].name == "spirit" && roversArr[i].camera == "fhaz") {
+        roversArr[i].maxDate = "2010-02-14";
+        var spirit = roversArr[i];
+        displayPicture(spirit);
+      }
+      else if (roversArr[i].name == "spirit" && roversArr[i].camera == "rhaz") {
+        roversArr[i].maxDate = "2010-02-09";
+        var spirit = roversArr[i];
+        displayPicture(spirit);
+      }
+      else {
+        $.ajax({
+        url: "https://api.nasa.gov/mars-photos/api/v1/manifests/curiosity?&api_key=" + key,
+        method: "GET"
+        }).then (function(response) {
+        
+          // gets the index for curiosity, since the ajax call takes longer to return a value and i would be undefined
+          var index = roversArr.findIndex(function(x){return x.name === "curiosity"});
+          roversArr[index].maxDate = response.photo_manifest.max_date;
+          var curiosity = roversArr[index];
+          displayPicture(curiosity);
+        });
+      }   
+    }
+  }  
 
 
 
   function displayPicture(rover) {
-  
-    var querySelector = "https://api.nasa.gov/mars-photos/api/v1/rovers/" + rover.name + "/photos?earth_date=" + rover.maxDate + "&camera=" + rover.camera + "&api_key=" + key;
-
       $.ajax({
-        url: querySelector,
+        url: "https://api.nasa.gov/mars-photos/api/v1/rovers/" + rover.name + "/photos?earth_date=" + rover.maxDate + "&camera=" + rover.camera + "&api_key=" + key,
         method: "GET"
       }).then (function(response) {
         //here's where we'll get the latest image from the given rover and camera
-        console.log(response.photos[0].img_src);
-
+        console.log(response.photos[0].img_src)
+        
+   
       });
     }
-});
+
+    // submit button runs getInput function
+    $("#submitBtn").click(function() {
+      event.preventDefault();
+    // clears out any previous items in roversArr
+      roversArr = [];
+      getInput();
+    });
+
+    // still need to get this working
+    $("#clearBtn").click(function(){
+      event.preventDefault;
+      console.log("click");
+    });
+
+
 
   console.log( "Getting Weather for Mars!" );
   getForecast();
 
-});
+
 
 let marsWeather = [];
   
@@ -114,4 +143,4 @@ let marsWeather = [];
     });
  }
 
-
+});
