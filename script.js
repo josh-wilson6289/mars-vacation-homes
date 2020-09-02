@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+
 // array to store user-checked rovers
 var roversArr = [];
 
@@ -90,8 +91,6 @@ var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
     }
   }  
 
-
-
   function displayPicture(rover) {
       $.ajax({
         url: "https://api.nasa.gov/mars-photos/api/v1/rovers/" + rover.name + "/photos?earth_date=" + rover.maxDate + "&camera=" + rover.camera + "&api_key=" + key,
@@ -99,8 +98,6 @@ var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
       }).then (function(response) {
         //here's where we'll get the latest image from the given rover and camera
         console.log(response.photos[0].img_src)
-        
-   
       });
     }
 
@@ -115,6 +112,8 @@ var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
     // still need to get this working
     $("#clearBtn").click(function(){
       event.preventDefault;
+      // this should clear out the photos once the clear button is clicked
+      // $("#photoRow").empty();
       console.log("click");
     });
 
