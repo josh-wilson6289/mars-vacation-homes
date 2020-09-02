@@ -1,52 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
       <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-     <title>Project 1</title>
-     <style src="style.css"></style>
+
+     <title>Mars Vacation Homes</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css" integrity="sha384-9+PGKSqjRdkeAU7Eu4nkJU8RFaH8ace8HGXnkiKMP9I9Te0GJ4/km3L1Z8tXigpG" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
   
 </head>
+<nav id= "navBar">
+  <a>Mars Vacation Homes</a>
+  </nav>
 <body>
-    <form>
-        <fieldset class="form-group">
-            <legend>Rover Select</legend>
-            <div class="form-check">
+  <div  class = "container">
+    <div class= "row">
+    <div class = "col-6">
+      <form>
+        <fieldset class="form-group" >
+          <legend>Rover Select</legend>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" id="curiosity">
+              Curiosity
+            </label>
+          </div>
+          <div class="form-check">
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="curiosity">
-                Curiosity
+                <input class="form-check-input" type="checkbox" id="opportunity">
+                Opportunity
               </label>
             </div>
             <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox" id="opportunity">
-                  Opportunity
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox" id="spirit" >
-                  Spirit
-                </label>
-              </div>
-          </fieldset>
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" id="spirit" >
+                Spirit
+              </label>
+            </div>
+        </fieldset>
+      <div class ="row">
         <fieldset>
-          <div class="form-group">
-            <label>Camera Select</label>
+          <div class="form-group" >
+         <label>Camera Select</label>
             <select class="roverSelect" id="cameraSelect">
-              <option id="fhaz">FHAZ</option>
-              <option id = "rhaz">RHAZ</option>
-              <option id = "navcam">NAVCAM</option> 
+              <option value="fhaz" id="fhaz">FHAZ</option>
+              <option value="rhaz" id="rhaz">RHAZ</option>
+              <option value="navcam" id= "nav">NAVCAM</option> 
             </select>
           </div>
-        <button type="button" class="btn btn-success" id="submitBtn">Submit</button>
-        <button type="button" class="btn btn-danger" id="clearBtn">Clear</button>
+        <button type="button" class="btn btn-success" class = "row"  id="submitBtn">Submit</button>
+        <button type="button" class="btn btn-danger" class = "row" id="clearBtn">Clear</button>
+        </fieldset>
       </form>
+      </div>
+    </div>
+    <div class = "row" class = "col-6">
+
+    <a id="photoDisplay">
+     
+
+    </a>
+    </div>
+    </div>
+    </div>
+  </div>
+   
       
       
-      <div class="container"> 
+      <div style= "maring-top: 30px" class="container"> 
           <div style="background-image: url('./mars1.jpg'); background-repeat: no-repeat; background-size: cover;" class="jumbotron">
         
         <div class="row">
@@ -70,17 +92,17 @@
             </div>
             <div style="color: white; font-size: large;" class="col-3">
                 <br><br>
+
                 <h4 style="color: white;" id="currentSol">Sol 611</h4>
                 <p id="currentDate">August 15</p>
+
 
             </div>
             <div style="color: white; font-size: medium;" class="col-3">
                 <br><br>
                 <p>Pressure: <span id="pressure"></span></p>
-                <p>Wind Speed: <span id="windSpeed"></span></p>
+                <p>Wind Speed: <span id="windSpeed"></span><sup>2</sup></p>
                 <p>Wind Direction: <span id="windDirection"></span></p>
-                <p>Atmospheric Opacity: <span id="atmosOpa"></span></p>
-
             </div>
 
         </div>
@@ -91,8 +113,8 @@
     <div>
     <button class="card col" id="btnSol1">
         <div class="card-body">
-            <h4 id="sol1">Sol 608</h4>
-            <div id="date1">Aug. 12</div>
+            <h4 id="sol1"></h4>
+            <div id="date1"></div>
             <div>------------</div>
             <div>Avg temp: <span id="avgTempSol1"></span></div>
             <div>Min. Temp: <span id="minTempSol1"></span></div>
@@ -105,8 +127,8 @@
     <div>
     <button class="card col" id="btnSol2">
         <div class="card-body">
-            <h4 id="sol2">Sol 609</h4>
-            <div id="date2">Aug. 13</div>
+            <h4 id="sol2"></h4>
+            <div id="date2"></div>
             <div>------------</div>
             <div>Avg temp: <span id="avgTempSol2"></span></div>
             <div>Min. Temp: <span id="minTempSol2"></span></div>
@@ -119,8 +141,8 @@
     <div>
     <button class="card col" id="btnSol3">
         <div class="card-body">
-            <h4 id="sol3">Sol 610</h4>
-            <div id="date3">Aug. 14</div>
+            <h4 id="sol3"></h4>
+            <div id="date3"></div>
             <div>------------</div>
             <div>Avg temp: <span id="avgTempSol3"></span></div>
             <div>Min. Temp: <span id="minTempSol3"></span></div>
@@ -133,8 +155,8 @@
     <div>
     <button class="card col" id="btnSol4">
         <div class="card-body">
-            <h4 id="sol4">Sol 611</h4>
-            <div id="date4">Aug. 15</div>
+            <h4 id="sol4"></h4>
+            <div id="date4"></div>
             <div>------------</div>
             <div>Avg temp: <span id="avgTempSol4"></span></div>
             <div>Min. Temp: <span id="minTempSol4"></span></div>
