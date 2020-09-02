@@ -3,9 +3,12 @@
 <head>
       <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
      <title>Mars Vacation Homes</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css" integrity="sha384-9+PGKSqjRdkeAU7Eu4nkJU8RFaH8ace8HGXnkiKMP9I9Te0GJ4/km3L1Z8tXigpG" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
+
+  
 </head>
 <nav id= "navBar">
   <a>Mars Vacation Homes</a>
@@ -55,7 +58,7 @@
     <div class = "row" class = "col-6">
 
     <a id="photoDisplay">
-      <!-- <img src = ""; id  ="photoDisplay"> -->
+     
 
     </a>
     </div>
@@ -65,15 +68,16 @@
    
       
       
-      <div class="container"> 
-        <br><br><br><br>
+      <div style= "maring-top: 30px" class="container"> 
+          <div style="background-image: url('./mars1.jpg'); background-repeat: no-repeat; background-size: cover;" class="jumbotron">
+        
         <div class="row">
            
-            <h1>Latest Weather <br> at Elysium Planitia</h1>
+            <h3 style="color: white;">Latest Weather <br> at Elysium Planitia</h3>
 
         </div>
         <br>
-        <div class="row">
+        <div style="color: white;" class="row">
             <p>InSight is taking daily weather measurements
                 (temperature, wind, pressure) <br> on the surface
                 of Mars at Elysium Planitia, a flat, smooth plain
@@ -86,13 +90,15 @@
             <div class="col-1">
 
             </div>
-            <div class="col-3">
+            <div style="color: white; font-size: large;" class="col-3">
                 <br><br>
-                <h4 id="currentSol"></h4>
-                <p id="currentDate"></p>
+
+                <h4 style="color: white;" id="currentSol">Sol 611</h4>
+                <p id="currentDate">August 15</p>
+
 
             </div>
-            <div class="col-3">
+            <div style="color: white; font-size: medium;" class="col-3">
                 <br><br>
                 <p>Pressure: <span id="pressure"></span></p>
                 <p>Wind Speed: <span id="windSpeed"></span><sup>2</sup></p>
@@ -159,8 +165,8 @@
         </div>
     </button>
     </div>
-
-
+    </div>
+</div>
 </div>
               <!-- Link to jQuery -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
