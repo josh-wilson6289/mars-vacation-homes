@@ -8,10 +8,7 @@ var roversArr = [];
 var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
 
   function getInput() {
-      // get rover id and assign it to name.  pass it to getLastDate
-      // camera equals user input for #cameraSelect.  Pass camera to getLastDate
-      //getLastDate(rover, camera);
-    
+
     var camera = $("#cameraSelect option:selected").val();
 
     if (document.getElementById("curiosity") == false && document.getElementById("opportunity") == false && document.getElementById("spirit") == false) {
@@ -43,7 +40,7 @@ var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
   
   function getLastDate(roversArr) { 
     for (var i = 0; i < roversArr.length; i++) {
-      //   // if statements to determine the correct maxDate for user camera
+      // if statements to determine the correct maxDate for user camera
        
       if (roversArr[i].name == "opportunity" && roversArr[i].camera == "NAVCAM") {
         roversArr[i].maxDate = "2018-05-16";
@@ -104,6 +101,10 @@ var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
         var roverDescription = $("<p>"); 
 
         photo.attr("src", response.photos[0].img_src);
+        photo.attr("class", "roverPhoto");
+        roverName.attr("class", "roverName");
+        roverDescription.attr("class", "roverDescription");
+
         roverName.text(rover.name);
         roverDescription.text("Photo taken on " + moment(rover.maxDate).format("MMMM do YYYY") + " with " + rover.camera + " camera");
 
