@@ -254,6 +254,8 @@ var exampleWeather = {
       }
 
       var r = marsWeather.sol_keys[0];
+
+      //setting up sol first 
       var t = parseInt(r);
       $("#sol1").text("Sol: " + t);
       $("#date1").text(marsWeather[t].First_UTC.Time.split('T').shift());
@@ -262,18 +264,35 @@ var exampleWeather = {
       $("#maxTempSol1").text(Math.round(marsWeather[t].AT.mx));
        t = t + 1;
 
+      //setting up sol two
+      $("#sol2").text("Sol: " + t);
+      $("#date2").text(marsWeather[t].First_UTC.Time.split('T').shift());
+      $("#avgTempSol2").text(Math.round(marsWeather[t].AT.av));
+      $("#minTempSol2").text(Math.round(marsWeather[t].AT.mn));
+      $("#maxTempSol2").text(Math.round(marsWeather[t].AT.mx));
+       t = t + 1;
 
+      //setting up sol three
+      $("#sol3").text("Sol: " + t);
+      $("#date3").text(marsWeather[t].First_UTC.Time.split('T').shift());
+      $("#avgTempSol3").text(Math.round(marsWeather[t].AT.av));
+      $("#minTempSol3").text(Math.round(marsWeather[t].AT.mn));
+      $("#maxTempSol3").text(Math.round(marsWeather[t].AT.mx));
+       t = t + 1;
 
+      //setting up sol four
+      $("#sol4").text("Sol: " + t);
+      $("#date4").text(marsWeather[t].First_UTC.Time.split('T').shift());
+      $("#avgTempSol4").text(Math.round(marsWeather[t].AT.av));
+      $("#minTempSol4").text(Math.round(marsWeather[t].AT.mn));
+      $("#maxTempSol4").text(Math.round(marsWeather[t].AT.mx));
 
-
+      //setting up the main current info 
        $("#currentSol").text("Sol: " + t);
        $("#currentDate").text(marsWeather[t].First_UTC.Time.split('T').shift());
        $("#pressure").text(marsWeather[t].PRE.av  + " Pa");
        $("#windSpeed").text(marsWeather[t].HWS.av  + "m/s");
        $("#windDirection").text(marsWeather[t].WD.most_common.compass_point);
-
-
-
       
     })
     .catch((error) => {
