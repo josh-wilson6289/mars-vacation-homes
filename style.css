@@ -1,3 +1,10 @@
 .fourDay {
     text-align: center;
 }
+#navBar{
+    background-color: slategray;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 35px;
+}
+
