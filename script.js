@@ -46,21 +46,33 @@ var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
        
       if (roversArr[i].name == "opportunity" && roversArr[i].camera == "navcam") {
         roversArr[i].maxDate = "2018-05-16";
+        var opportunity = roversArr[i];
+        displayPicture(opportunity);
       }
       else if (roversArr[i].name == "opportunity" && roversArr[i].camera =="fhaz") {
         roversArr[i].maxDate = "2018-06-04";
+        var opportunity = roversArr[i];
+        displayPicture(opportunity);
       }
       else if (roversArr[i].name == "opportunity" && roversArr[i].camera == "rhaz") {
         roversArr[i].maxDate = "2018-05-17";
+        var opportunity = roversArr[i];
+        displayPicture(opportunity);
       }
       else if (roversArr[i].name == "spirit" && roversArr[i].camera == "navcam") {
         roversArr[i].maxDate = "2010-02-26";
+        var spirit = roversArr[i]
+        displayPicture(spirit);
       }
       else if (roversArr[i].name == "spirit" && roversArr[i].camera == "fhaz") {
         roversArr[i].maxDate = "2010-02-14";
+        var spirit = roversArr[i];
+        displayPicture(spirit);
       }
       else if (roversArr[i].name == "spirit" && roversArr[i].camera == "rhaz") {
         roversArr[i].maxDate = "2010-02-09";
+        var spirit = roversArr[i];
+        displayPicture(spirit);
       }
       else {
         $.ajax({
@@ -71,26 +83,24 @@ var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
           // gets the index for curiosity, since the ajax call takes longer to return a value and i would be undefined
           var index = roversArr.findIndex(function(x){return x.name === "curiosity"});
           roversArr[index].maxDate = response.photo_manifest.max_date;
+          var curiosity = roversArr[index];
+          displayPicture(curiosity);
         });
       }   
     }
-      console.log(roversArr);
-      // pass rover array to displayPicture function
-      displayPicture(roversArr);
   }  
 
 
 
-  function displayPicture(roversArr) {
-    for (var i = 0; i < roversArr.length; i++)
-     
+  function displayPicture(rover) {
       $.ajax({
-        url: "https://api.nasa.gov/mars-photos/api/v1/rovers/" + roversArr[i].name + "/photos?earth_date=" + roversArr[i].maxDate + "&camera=" + roversArr[i].camera + "&api_key=" + key,
+        url: "https://api.nasa.gov/mars-photos/api/v1/rovers/" + rover.name + "/photos?earth_date=" + rover.maxDate + "&camera=" + rover.camera + "&api_key=" + key,
         method: "GET"
       }).then (function(response) {
         //here's where we'll get the latest image from the given rover and camera
-        console.log(response.photos[0].img_src);
-
+        console.log(response.photos[0].img_src)
+        
+   
       });
     }
 
