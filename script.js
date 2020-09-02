@@ -245,9 +245,14 @@ var exampleWeather = {
       method: "GET"
     }).then(function(response) {
       console.log(response);
+      //Adding in a check to make sure that we are recieving data from NASA if not then use the hardcoded object. 
       if(response.sol_keys.length === 0){
         console.log(exampleWeather);
+        marsWeather = exampleWeather;
+      }else{
+        marsWeather = response;
       }
+      
     })
     .catch((error) => {
         console.log(error)
