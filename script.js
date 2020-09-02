@@ -210,7 +210,7 @@ var exampleWeather = {
     "10": { "compass_degrees": 225.0, "compass_point": "SW", "compass_right": -0.707106781187,
     "compass_up": -0.707106781187, "ct": 27124 }
     },
-    "First_UTC": {"Time": "2019-08-30T08:03:59Z", "Last_UTC": "2019-08-31T08:43:34Z", "Season": 'Fall' } 
+    "First_UTC": {"Time": "2019-08-29T08:03:59Z", "Last_UTC": "2019-08-30T08:43:34Z", "Season": 'Fall' } 
   }, 
   "611":  { 
     "AT": { "av": -55.224, "ct": 326642, "mn": -93.879, "mx": -16.224}, 
@@ -226,7 +226,7 @@ var exampleWeather = {
     "10": { "compass_degrees": 225.0, "compass_point": "SW", "compass_right": -0.707106781187,
     "compass_up": -0.707106781187, "ct": 27124 }
     },
-    "First_UTC": {"Time": "2019-08-31T08:03:59Z", "Last_UTC": "2019-09-01T08:43:34Z", "Season": 'Fall' } 
+    "First_UTC": {"Time": "2019-08-30T08:03:59Z", "Last_UTC": "2019-08-31T08:43:34Z", "Season": 'Fall' } 
   }, 
   "validity_checks": {
     "259": { 
