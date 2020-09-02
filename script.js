@@ -98,6 +98,7 @@ var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
       }).then (function(response) {
         //here's where we'll get the latest image from the given rover and camera
         console.log(response.photos[0].img_src)
+        
       });
     }
 

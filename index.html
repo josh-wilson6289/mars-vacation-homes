@@ -4,62 +4,45 @@
 
       <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-     <title>Mars Vacation Homes</title>
+     <title>Project 1</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css" integrity="sha384-9+PGKSqjRdkeAU7Eu4nkJU8RFaH8ace8HGXnkiKMP9I9Te0GJ4/km3L1Z8tXigpG" crossorigin="anonymous">
   <style src="style.css"></style>
 </head>
 <body>
-  <div  class = "container">
-    <div class= "row">
-    <div class = "col-6">
-      <form>
-        <fieldset class="form-group" >
-          <legend>Rover Select</legend>
-          <div class="form-check">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" id="curiosity">
-              Curiosity
-            </label>
-          </div>
-          <div class="form-check">
+    <form>
+        <fieldset class="form-group">
+            <legend>Rover Select</legend>
+            <div class="form-check">
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="opportunity">
-                Opportunity
+                <input class="form-check-input" type="checkbox" id="curiosity">
+                Curiosity
               </label>
             </div>
             <div class="form-check">
-              <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="spirit" >
-                Spirit
-              </label>
-            </div>
-        </fieldset>
-      <div class ="row">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" id="opportunity">
+                  Opportunity
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" id="spirit" >
+                  Spirit
+                </label>
+              </div>
+          </fieldset>
         <fieldset>
-          <div class="form-group" >
-         <label>Camera Select</label>
+          <div class="form-group">
+            <label>Camera Select</label>
             <select class="roverSelect" id="cameraSelect">
               <option value="fhaz" id="fhaz">FHAZ</option>
               <option value="rhaz" id="rhaz">RHAZ</option>
-              <option value="navcam" id= "navcam">NAVCAM</option> 
+              <option value="navcam" id= "nav">NAVCAM</option> 
             </select>
           </div>
-        <button type="button" class="btn btn-success" class = "row"  id="submitBtn">Submit</button>
-        <button type="button" class="btn btn-danger" class = "row" id="clearBtn">Clear</button>
-        </fieldset>
+        <button type="button" class="btn btn-success" id="submitBtn">Submit</button>
+        <button type="button" class="btn btn-danger" id="clearBtn">Clear</button>
       </form>
-      </div>
-    </div>
-    <div class = "row" class = "col-6">
-    <h3>Photo Display</h3>
-    <a>
-      <img src = ""; id  ="photoDisplay">
-    </a>
-    </div>
-    </div>
-    </div>
-  </div>
-   
       
       
       <div class="container"> 
@@ -157,25 +140,6 @@
 
         </div>
     </button>
-    </div>
-
-    <div class="modal" id="myModal" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>Modal body text goes here.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
     </div>
 
 
