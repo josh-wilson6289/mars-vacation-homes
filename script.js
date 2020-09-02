@@ -2,22 +2,17 @@ $(document).ready(function() {
 
 getForecast();
 
-var photoDisplay = $(".photoDisplay");
-  
-// array to store user-checked rovers
+var photoDisplay = $("#photoDisplay");
 var roversArr = [];
-
-
 var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
 
+  // pulls in user-selected data after submit button is clicked
   function getInput() {
-    photoDisplay.empty();
+    
+    // gets value from the selected camera
+  var camera = $("#cameraSelect option:selected").val();
 
-    var camera = $("#cameraSelect option:selected").val();
-
-    if (document.getElementById("curiosity") == false && document.getElementById("opportunity") == false && document.getElementById("spirit") == false) {
-      alert("Please choose a rover!");
-    }
+    // assigns camera and rover name to new object
     if (document.getElementById("curiosity").checked == true) {
       var curiosityRover = {
       "name": "curiosity",
@@ -42,40 +37,41 @@ var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
     getLastDate(roversArr);
   }
   
+  // assigns the maxDate to each rover and camera selected, then runs displayPicture function
   function getLastDate(roversArr) { 
     for (var i = 0; i < roversArr.length; i++) {
-      // if statements to determine the correct maxDate for user camera
-       
-      if (roversArr[i].name == "opportunity" && roversArr[i].camera == "NAVCAM") {
+  
+      if (roversArr[i].name == "opportunity" && roversArr[i].camera == "navcam") {
         roversArr[i].maxDate = "2018-05-16";
         var opportunity = roversArr[i];
         displayPicture(opportunity);
       }
-      else if (roversArr[i].name == "opportunity" && roversArr[i].camera =="FHAZ") {
+      else if (roversArr[i].name == "opportunity" && roversArr[i].camera =="fhaz") {
         roversArr[i].maxDate = "2018-06-04";
         var opportunity = roversArr[i];
         displayPicture(opportunity);
       }
-      else if (roversArr[i].name == "opportunity" && roversArr[i].camera == "RHAZ") {
+      else if (roversArr[i].name == "opportunity" && roversArr[i].camera == "rhaz") {
         roversArr[i].maxDate = "2018-05-17";
         var opportunity = roversArr[i];
         displayPicture(opportunity);
       }
-      else if (roversArr[i].name == "spirit" && roversArr[i].camera == "NAVCAM") {
+      else if (roversArr[i].name == "spirit" && roversArr[i].camera == "navcam") {
         roversArr[i].maxDate = "2010-02-26";
         var spirit = roversArr[i]
         displayPicture(spirit);
       }
-      else if (roversArr[i].name == "spirit" && roversArr[i].camera == "FHAZ") {
+      else if (roversArr[i].name == "spirit" && roversArr[i].camera == "fhaz") {
         roversArr[i].maxDate = "2010-02-14";
         var spirit = roversArr[i];
         displayPicture(spirit);
       }
-      else if (roversArr[i].name == "spirit" && roversArr[i].camera == "RHAZ") {
+      else if (roversArr[i].name == "spirit" && roversArr[i].camera == "rhaz") {
         roversArr[i].maxDate = "2010-02-09";
         var spirit = roversArr[i];
         displayPicture(spirit);
       }
+      // curiosity's maxDate changes, so ajax call is needed here
       else {
         $.ajax({
         url: "https://api.nasa.gov/mars-photos/api/v1/manifests/curiosity?&api_key=" + key,
@@ -93,12 +89,12 @@ var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
   }  
 
   function displayPicture(rover) {
+    // gets the image using all parameters
       $.ajax({
         url: "https://api.nasa.gov/mars-photos/api/v1/rovers/" + rover.name + "/photos?earth_date=" + rover.maxDate + "&camera=" + rover.camera + "&api_key=" + key,
         method: "GET"
       }).then (function(response) {
-        //here's where we'll get the latest image from the given rover and camera
-        
+        // creates DOM elements to display photos on the page
         photoDisplay = $("#photoDisplay");
         var photoDisplay = $("#photoDisplay");
 
@@ -120,25 +116,16 @@ var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
       });
     }
 
-
-});
-
-
-
-    // submit button runs getInput function
     $("#submitBtn").click(function() {
       event.preventDefault();
-    // clears out any previous items in roversArr
       roversArr = [];
+      photoDisplay.empty();
       getInput();
     });
 
-    // still need to get this working
     $("#clearBtn").click(function(){
       event.preventDefault;
-      // this should clear out the photos once the clear button is clicked
-      // $("#photoRow").empty();
-      console.log("click");
+      photoDisplay.empty();
     });
 
 
@@ -350,5 +337,8 @@ var exampleWeather = {
         console.log(error)
     });
  }
+
+});
+
 
 
