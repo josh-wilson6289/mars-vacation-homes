@@ -45,32 +45,32 @@ var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
     for (var i = 0; i < roversArr.length; i++) {
       //   // if statements to determine the correct maxDate for user camera
        
-      if (roversArr[i].name == "opportunity" && roversArr[i].camera == "NAVCAM") {
+      if (roversArr[i].name == "opportunity" && roversArr[i].camera == "navcam") {
         roversArr[i].maxDate = "2018-05-16";
         var opportunity = roversArr[i];
         displayPicture(opportunity);
       }
-      else if (roversArr[i].name == "opportunity" && roversArr[i].camera =="FHAZ") {
+      else if (roversArr[i].name == "opportunity" && roversArr[i].camera =="fhaz") {
         roversArr[i].maxDate = "2018-06-04";
         var opportunity = roversArr[i];
         displayPicture(opportunity);
       }
-      else if (roversArr[i].name == "opportunity" && roversArr[i].camera == "RHAZ") {
+      else if (roversArr[i].name == "opportunity" && roversArr[i].camera == "rhaz") {
         roversArr[i].maxDate = "2018-05-17";
         var opportunity = roversArr[i];
         displayPicture(opportunity);
       }
-      else if (roversArr[i].name == "spirit" && roversArr[i].camera == "NAVCAM") {
+      else if (roversArr[i].name == "spirit" && roversArr[i].camera == "navcam") {
         roversArr[i].maxDate = "2010-02-26";
         var spirit = roversArr[i]
         displayPicture(spirit);
       }
-      else if (roversArr[i].name == "spirit" && roversArr[i].camera == "FHAZ") {
+      else if (roversArr[i].name == "spirit" && roversArr[i].camera == "fhaz") {
         roversArr[i].maxDate = "2010-02-14";
         var spirit = roversArr[i];
         displayPicture(spirit);
       }
-      else if (roversArr[i].name == "spirit" && roversArr[i].camera == "RHAZ") {
+      else if (roversArr[i].name == "spirit" && roversArr[i].camera == "rhaz") {
         roversArr[i].maxDate = "2010-02-09";
         var spirit = roversArr[i];
         displayPicture(spirit);
