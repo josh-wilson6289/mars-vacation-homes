@@ -154,10 +154,10 @@ var exampleWeather = {
   }, 
   "608":  { 
     "AT": { "av": -56.584, "ct": 326642, "mn": -92.004, "mx": -19.584 }, 
-    "HWS": { "av": 4.80, "ct": 154146, "mn": 0.156, "mx": 17.617 }, 
-    "PRE": { "av": 761.006, "ct": 163012, "mn": 742.1498, "mx": 780.3891 }, 
+    "HWS": { "av": 11.80, "ct": 154146, "mn": 0.156, "mx": 17.617 }, 
+    "PRE": { "av": 778.896, "ct": 163012, "mn": 742.1498, "mx": 780.3891 }, 
     "WD": {  
-    "most_common": { "compass_degrees": 202.5, "compass_point": "SSW", "compass_right": -0.382683432365, 
+    "most_common": { "compass_degrees": 202.5, "compass_point": "N", "compass_right": -0.382683432365, 
     "compass_up": -0.923879532511, "ct": 28551 }, 
     "8": { "compass_degrees": 180.0, "compass_point": "S", "compass_right": 0.0, 
     "compass_up": -1.0, "ct": 17699 },
@@ -170,10 +170,10 @@ var exampleWeather = {
   }, 
   "609":  { 
     "AT": { "av": -55.658, "ct": 326642, "mn": -93.012, "mx": -18.584 }, 
-    "HWS": { "av": 4.35, "ct": 154146, "mn": 0.156, "mx": 17.617 }, 
-    "PRE": { "av": 761.006, "ct": 163012, "mn": 742.1498, "mx": 780.3891 }, 
+    "HWS": { "av": 7.35, "ct": 154146, "mn": 0.156, "mx": 17.617 }, 
+    "PRE": { "av": 765.099, "ct": 163012, "mn": 742.1498, "mx": 780.3891 }, 
     "WD": {  
-    "most_common": { "compass_degrees": 202.5, "compass_point": "SSW", "compass_right": -0.382683432365, 
+    "most_common": { "compass_degrees": 202.5, "compass_point": "SE", "compass_right": -0.382683432365, 
     "compass_up": -0.923879532511, "ct": 28551 }, 
     "8": { "compass_degrees": 180.0, "compass_point": "S", "compass_right": 0.0, 
     "compass_up": -1.0, "ct": 17699 },
@@ -186,10 +186,10 @@ var exampleWeather = {
   }, 
   "610":  { 
     "AT": { "av": -54.584, "ct": 326642, "mn": -93.836, "mx": -16.584}, 
-    "HWS": { "av": 4.35, "ct": 154146, "mn": 0.156, "mx": 17.617 }, 
-    "PRE": { "av": 761.006, "ct": 163012, "mn": 742.1498, "mx": 780.3891 }, 
+    "HWS": { "av": 2.01, "ct": 154146, "mn": 0.156, "mx": 17.617 }, 
+    "PRE": { "av": 709.458, "ct": 163012, "mn": 742.1498, "mx": 780.3891 }, 
     "WD": {  
-    "most_common": { "compass_degrees": 202.5, "compass_point": "SSW", "compass_right": -0.382683432365, 
+    "most_common": { "compass_degrees": 202.5, "compass_point": "NW", "compass_right": -0.382683432365, 
     "compass_up": -0.923879532511, "ct": 28551 }, 
     "8": { "compass_degrees": 180.0, "compass_point": "S", "compass_right": 0.0, 
     "compass_up": -1.0, "ct": 17699 },
@@ -202,10 +202,10 @@ var exampleWeather = {
   }, 
   "611":  { 
     "AT": { "av": -55.224, "ct": 326642, "mn": -93.879, "mx": -16.224}, 
-    "HWS": { "av": 4.35, "ct": 154146, "mn": 0.156, "mx": 17.617 }, 
-    "PRE": { "av": 761.006, "ct": 163012, "mn": 742.1498, "mx": 780.3891 }, 
+    "HWS": { "av": 6.35, "ct": 154146, "mn": 0.156, "mx": 17.617 }, 
+    "PRE": { "av": 711.953, "ct": 163012, "mn": 742.1498, "mx": 780.3891 }, 
     "WD": {  
-    "most_common": { "compass_degrees": 202.5, "compass_point": "SSW", "compass_right": -0.382683432365, 
+    "most_common": { "compass_degrees": 202.5, "compass_point": "NE", "compass_right": -0.382683432365, 
     "compass_up": -0.923879532511, "ct": 28551 }, 
     "8": { "compass_degrees": 180.0, "compass_point": "S", "compass_right": 0.0, 
     "compass_up": -1.0, "ct": 17699 },
@@ -283,10 +283,9 @@ var exampleWeather = {
       url: NasaQueryURL,
       method: "GET"
     }).then(function(response) {
-      console.log(response);
+      
       //Adding in a check to make sure that we are recieving data from NASA if not then use the hardcoded object. 
       if(response.sol_keys.length === 0){
-        console.log(exampleWeather);
         marsWeather = exampleWeather;
       }else{
         marsWeather = response;
@@ -338,6 +337,28 @@ var exampleWeather = {
         console.log(error)
     });
  }
+
+ $( ".card-col" ).click(function() {
+
+    var r = marsWeather.sol_keys[0];
+    var t = parseInt(r);
+    if ($(this)[0].id === "btnSol2"){
+      t = t + 1;
+    }else if ($(this)[0].id === "btnSol3"){
+      t = t + 2;
+    }else if ($(this)[0].id === "btnSol4"){
+      t = t + 3;
+    }else {
+      //t = t; 
+    }
+
+    //setting up the main clicked info 
+    $("#currentSol").text("Sol: " + t);
+    $("#currentDate").text(marsWeather[t].First_UTC.Time.split('T').shift());
+    $("#pressure").text(marsWeather[t].PRE.av  + " Pa");
+    $("#windSpeed").text(marsWeather[t].HWS.av  + "m/s");
+    $("#windDirection").text(marsWeather[t].WD.most_common.compass_point);
+ });
 
 });
 
