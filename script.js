@@ -352,12 +352,7 @@ var exampleWeather = {
       //t = t; 
     }
 
-    //setting up the main current info 
-    $("#currentSol").text("Sol: " + t);
-    $("#currentDate").text(marsWeather[t].First_UTC.Time.split('T').shift());
-    $("#pressure").text(marsWeather[t].PRE.av  + " Pa");
-    $("#windSpeed").text(marsWeather[t].HWS.av  + "m/s");
-    $("#windDirection").text(marsWeather[t].WD.most_common.compass_point);
+
  });
 
 });
