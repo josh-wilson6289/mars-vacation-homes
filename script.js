@@ -283,10 +283,9 @@ var exampleWeather = {
       url: NasaQueryURL,
       method: "GET"
     }).then(function(response) {
-      console.log(response);
+      
       //Adding in a check to make sure that we are recieving data from NASA if not then use the hardcoded object. 
       if(response.sol_keys.length === 0){
-        console.log(exampleWeather);
         marsWeather = exampleWeather;
       }else{
         marsWeather = response;
@@ -338,6 +337,28 @@ var exampleWeather = {
         console.log(error)
     });
  }
+
+ $( ".card-col" ).click(function() {
+    console.log($(this)[0].id);
+    var r = marsWeather.sol_keys[0];
+    var t = parseInt(r);
+    if ($(this)[0].id === "btnSol2"){
+      t = t + 1;
+    }else if ($(this)[0].id === "btnSol3"){
+      t = t + 2;
+    }else if ($(this)[0].id === "btnSol4"){
+      t = t + 3;
+    }else {
+      //t = t; 
+    }
+
+    //setting up the main current info 
+    $("#currentSol").text("Sol: " + t);
+    $("#currentDate").text(marsWeather[t].First_UTC.Time.split('T').shift());
+    $("#pressure").text(marsWeather[t].PRE.av  + " Pa");
+    $("#windSpeed").text(marsWeather[t].HWS.av  + "m/s");
+    $("#windDirection").text(marsWeather[t].WD.most_common.compass_point);
+ });
 
 });
 
