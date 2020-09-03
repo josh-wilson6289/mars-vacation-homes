@@ -35,7 +35,7 @@ THEN It is raised intp the top section of data
 
 ```
 The following animation demonstrates the application functionality (cmd + click):
-https://media.giphy.com/media/cmSkFoE4BfXxn75UmQ/giphy.gif
+https://media.giphy.com/media/ife5ZZmQKVgo59M9jw/giphy.gif
 ## Obstacles faced during development
 ``
 Both API's that were used in this project went down for a period of time. This caused some difficulties during development. As well as one API being taken down until further notice causing a hard object to be coded and used. 
