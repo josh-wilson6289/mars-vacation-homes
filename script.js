@@ -108,7 +108,7 @@ var key = "l7taWHMaSee1eSh38lm8sF83paMJIJ9KJQ1ehkuc";
         roverDescription.attr("class", "roverDescription");
 
         roverName.text(rover.name);
-        roverDescription.text("Photo taken on " + moment(rover.maxDate).format("MMMM do YYYY") + " with " + rover.camera + " camera");
+        roverDescription.text("Photo taken on " + moment(rover.maxDate).format("MMMM Do YYYY") + " with " + rover.camera + " camera");
 
         photoDisplay.append(photo);
         photoDisplay.append(roverName);
