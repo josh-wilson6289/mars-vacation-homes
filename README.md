@@ -10,13 +10,13 @@ Destanee Glenn
 ## User Story
 
 ```
-The year is: 
-AS AN astroanut working with NASA
+The year is 2050: 
+AS AN person looking to colonize mars
 I WANT to be able to retireve photos from various rovers and cameras, as well as retrive 5 day's of  weather data from Elysium Planitia on Mars.  
-SO THAT I can accurately assess and monitor the conditions on Mars as time goes on.
+SO THAT I can accurately assess and monitor the conditions on Mars.
 ```
 
-## Acceptance Criteria
+##Website Functionality
 
 ```
 GIVEN I am using an astronomical weather app
@@ -34,8 +34,11 @@ THEN I am presented with set data for Elysium Plantia for various days
 ```
 
 The following animation demonstrates the application functionality (cmd + click):
-https://media.giphy.com/media/Up2EUWNVD8i3fw6kBQ/source.mp4
+https://media.giphy.com/media/cmSkFoE4BfXxn75UmQ/giphy.gif
+## Obstacles faced during development
+``
 
+```
 ## Instructions for future development
 ```
 
