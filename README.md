@@ -7,7 +7,7 @@
 Want to know what it would be like to live on Mars?  This project uses two different NASA APIs to display weather data and photos from different Mars Rovers. 
 
 ## Collaborators
-Josh Wilson [GitHub]
+Josh Wilson [GitHub](https://github.com/josh-wilson6289)
 Shubhangi Mundhada [GitHub](https://github.com/smundhada)
 Jason Perez [GitHub](https://github.com/jasandper)
 Destanee Glenn [GitHub](https://github.com/destaneelg)
