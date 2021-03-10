@@ -17,8 +17,11 @@ The following animation demonstrates the application functionality (cmd + click)
 https://media.giphy.com/media/ife5ZZmQKVgo59M9jw/giphy.gif
 
 ## Technologies Used
+
 [NASA Open APIs](https://api.nasa.gov/)
+
 [jQuery](https://jquery.com/)
+
 [Moment.js](https://momentjs.com/)
 
 ## Deployed App
